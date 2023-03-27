@@ -1,18 +1,23 @@
 ﻿using Example01;
 
-const string propertyName = @"city";
+const string propertyName = @"qux";
 
-const string json = @"
-{
-    ""name"": ""John Doe"",
-    ""age"": 42,
-    ""address"": {
-        ""street"": ""123 Main St"",
-        ""city"": ""Anywhere"",
-        ""state"": ""CA"",
-        ""zip"": ""12345""
+const string json =
+    """
+    { 
+        "foo": { 
+            "bar": 1, 
+            "baz": [
+            { 
+              "qux": "a" 
+            },
+            { 
+              "qux": "b"
+            }
+          ] 
+        }
     }
-}";
+    """;
 
 var service = new JsonPathService();
 var paths = service.GetJsonPaths(json, propertyName);

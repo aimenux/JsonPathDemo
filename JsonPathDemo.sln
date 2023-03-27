@@ -11,7 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example02", "src\Example02\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1F2870C4-6386-4D46-9DD6-4CE1FE413A5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example02.Tests", "test\Example02.Tests\Example02.Tests.csproj", "{D7343B20-43A4-4D19-BEA6-E481C4A11F0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example02.Tests", "test\Example02.Tests\Example02.Tests.csproj", "{D7343B20-43A4-4D19-BEA6-E481C4A11F0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EF89648E-8502-4F60-B5F5-525D8C96B893}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\ci.yml = .github\workflows\ci.yml
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
