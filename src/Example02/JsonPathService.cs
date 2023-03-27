@@ -21,26 +21,26 @@ public class JsonPathService : IJsonPathService
         {
             case JsonValueKind.Object:
             {
-                var result = new List<string>();
+                var results = new List<string>();
                 foreach (var property in element.EnumerateObject())
                 {
                     var propertyPath = $"{path}.{property.Name}";
-                    result.AddRange(GetJsonPaths(property.Value, propertyName, propertyPath));
+                    results.AddRange(GetJsonPaths(property.Value, propertyName, propertyPath));
                     if (HasPropertyName(property, propertyName))
                     {
-                        result.Add(propertyPath);
+                        results.Add(propertyPath);
                     }
                 }
-                return result;
+                return results;
             }
             case JsonValueKind.Array:
             {
-                var result = new List<string>();
+                var results = new List<string>();
                 for (var i = 0; i < element.GetArrayLength(); i++)
                 {
-                    result.AddRange(GetJsonPaths(element[i], propertyName, $"{path}[{i}]"));
+                    results.AddRange(GetJsonPaths(element[i], propertyName, $"{path}[{i}]"));
                 }
-                return result;
+                return results;
             }
             default:
                 return Array.Empty<string>();
